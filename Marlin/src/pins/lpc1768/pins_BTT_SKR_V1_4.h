@@ -89,6 +89,8 @@
 #else
   #ifndef Z_STOP_PIN
     #define Z_STOP_PIN                     P1_27  // Z-STOP
+    #define X_MAX_PIN                      P1_26  // E0DET  added
+    #define Y_MAX_PIN                      P1_25  // E1DET  added
   #endif
 #endif
 
@@ -143,19 +145,42 @@
   #define Z_CS_PIN                         P1_08
 #endif
 
-#define E0_STEP_PIN                        P2_13
-#define E0_DIR_PIN                         P0_11
-#define E0_ENABLE_PIN                      P2_12
-#ifndef E0_CS_PIN
-  #define E0_CS_PIN                        P1_04
+#define Y2_STEP_PIN                        P2_13
+#define Y2_DIR_PIN                         P0_11
+#define Y2_ENABLE_PIN                      P2_12
+#ifndef Y2_CS_PIN
+  #define Y2_CS_PIN                        P1_04
 #endif
 
-#define E1_STEP_PIN                        P1_15
-#define E1_DIR_PIN                         P1_14
-#define E1_ENABLE_PIN                      P1_16
-#ifndef E1_CS_PIN
-  #define E1_CS_PIN                        P1_01
+#define Z2_STEP_PIN                        P1_15
+#define Z2_DIR_PIN                         P1_14
+#define Z2_ENABLE_PIN                      P1_16
+#ifndef Z2_CS_PIN
+  #define Z2_CS_PIN                        P1_01
 #endif
+
+#define E0_STEP_PIN                        P2_03
+#define E0_DIR_PIN                         P2_03
+#define E0_ENABLE_PIN                      P2_03
+#ifndef E0_CS_PIN
+  #define E0_CS_PIN                        P2_03
+#endif
+
+// Below are origianl pin settings - remove Y2 and Z2
+
+//#define E1_STEP_PIN                        P1_15
+//#define E1_DIR_PIN                         P1_14
+//#define E1_ENABLE_PIN                      P1_16
+//#ifndef E1_CS_PIN
+//  #define E1_CS_PIN                        P1_01
+//#endif
+
+//#define E0_STEP_PIN                        P2_13
+//#define E0_DIR_PIN                         P0_11
+//#define E0_ENABLE_PIN                      P2_12
+//#ifndef E0_CS_PIN
+//  #define E0_CS_PIN                        P1_04
+//#endif
 
 #define TEMP_1_PIN                      P0_23_A0  // A2 (T2) - (69) - TEMP_1_PIN
 #define TEMP_BED_PIN                    P0_25_A2  // A0 (T0) - (67) - TEMP_BED_PIN
