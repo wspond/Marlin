@@ -159,6 +159,8 @@
   #define Z2_CS_PIN                        P1_01
 #endif
 
+//Set Extruder_0 to fan pins if needed
+
 #define E0_STEP_PIN                        P2_03
 #define E0_DIR_PIN                         P2_03
 #define E0_ENABLE_PIN                      P2_03
