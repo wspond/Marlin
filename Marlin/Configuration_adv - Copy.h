@@ -2656,14 +2656,14 @@
  *
  * See http://marlinfw.org/docs/configuration/laser_spindle.html for more config details.
  */
-#define SPINDLE_FEATURE
+//#define SPINDLE_FEATURE
 //#define LASER_FEATURE
 #if EITHER(SPINDLE_FEATURE, LASER_FEATURE)
-  #define SPINDLE_LASER_ACTIVE_HIGH     true  // Set to "true" if the on/off function is active HIGH
-  #define SPINDLE_LASER_PWM             false   // Set to "true" if your controller supports setting the speed/power
-  #define SPINDLE_LASER_PWM_INVERT      false   // Set to "true" if the speed/power goes up when you want it to go slower
+  #define SPINDLE_LASER_ACTIVE_HIGH     false  // Set to "true" if the on/off function is active HIGH
+  #define SPINDLE_LASER_PWM             true   // Set to "true" if your controller supports setting the speed/power
+  #define SPINDLE_LASER_PWM_INVERT      true   // Set to "true" if the speed/power goes up when you want it to go slower
 
- // #define SPINDLE_LASER_FREQUENCY       2500   // (Hz) Spindle/laser frequency (only on supported HALs: AVR and LPC)
+  #define SPINDLE_LASER_FREQUENCY       2500   // (Hz) Spindle/laser frequency (only on supported HALs: AVR and LPC)
 
   /**
    * Speed / Power can be set ('M3 S') and displayed in terms of:
@@ -2681,7 +2681,7 @@
 
   #if ENABLED(SPINDLE_FEATURE)
     //#define SPINDLE_CHANGE_DIR               // Enable if your spindle controller can change spindle direction
-    //#define SPINDLE_CHANGE_DIR_STOP            // Enable if the spindle should stop before changing spin direction
+    #define SPINDLE_CHANGE_DIR_STOP            // Enable if the spindle should stop before changing spin direction
     #define SPINDLE_INVERT_DIR          false  // Set to "true" if the spin direction is reversed
 
     #define SPINDLE_LASER_POWERUP_DELAY   5000 // (ms) Delay to allow the spindle/laser to come up to speed/power
@@ -2694,11 +2694,11 @@
      *
      * Set these required parameters for your controller
      */
-    #define SPEED_POWER_SLOPE           39.215  // SPEED_POWER_SLOPE = SPEED_POWER_MAX / 255
-    #define SPEED_POWER_INTERCEPT         1
-    #define SPEED_POWER_MIN           5000
-    #define SPEED_POWER_MAX           10000    // SuperPID router controller 0 - 30,000 RPM
-    #define SPEED_POWER_STARTUP       10000    // The default value for speed power when M3 is called without arguments
+    #define SPEED_POWER_SLOPE           118.4  // SPEED_POWER_SLOPE = SPEED_POWER_MAX / 255
+    #define SPEED_POWER_INTERCEPT         0
+    #define SPEED_POWER_MIN            5000
+    #define SPEED_POWER_MAX           30000    // SuperPID router controller 0 - 30,000 RPM
+    #define SPEED_POWER_STARTUP       25000    // The default value for speed power when M3 is called without arguments
 
   #else
 

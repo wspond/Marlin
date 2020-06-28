@@ -159,13 +159,13 @@
   #define Z2_CS_PIN                        P1_01
 #endif
 
-//Set Extruder_0 to fan pins if needed
+// Setting Extruder_0 to HE1 output if needed
 
-#define E0_STEP_PIN                        P2_03
-#define E0_DIR_PIN                         P2_03
-#define E0_ENABLE_PIN                      P2_03
+#define E0_STEP_PIN                        P2_04
+#define E0_DIR_PIN                         P2_04
+#define E0_ENABLE_PIN                      P2_04
 #ifndef E0_CS_PIN
-  #define E0_CS_PIN                        P2_03
+  #define E0_CS_PIN                        P2_04
 #endif
 
 // Below are origianl pin settings - remove Y2 and Z2
@@ -186,6 +186,8 @@
 
 #define TEMP_1_PIN                      P0_23_A0  // A2 (T2) - (69) - TEMP_1_PIN
 #define TEMP_BED_PIN                    P0_25_A2  // A0 (T0) - (67) - TEMP_BED_PIN
+#define SPINDLE_LASER_ENA_PIN           P2_07   // HE0 pin  
+#define SPINDLE_LASER_PWM_PIN           P2_07
 
 //
 // Software SPI pins for TMC2130 stepper drivers
